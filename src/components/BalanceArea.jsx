@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from 'react'
 import styles from './BalanceArea.module.css'
 import { useSelector } from 'react-redux'
+import useChangedEffect from '../hooks/useChangeEffect'
 const BalanceArea = () => {
   const { balance } = useSelector(state => state.management)
-  const [isChanged, setIsChanged] = useState(false)
-
-  useEffect(() => {
-    setIsChanged(true)
-    const timer = setTimeout(() => setIsChanged(false), 500)
-    return () => clearTimeout(timer)
-  }, [balance])
+  const isChanged = useChangedEffect(balance)
   return (
     <div className={styles.box}>
       <h2>잔액</h2>

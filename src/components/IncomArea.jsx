@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import useChangedEffect from '../hooks/useChangeEffect'
 import styles from './IncomArea.module.css'
 import { useSelector } from 'react-redux'
 
 const IncomArea = () => {
   const { income } = useSelector(state => state.management)
-  const [isChanged, setIsChanged] = useState(false)
-
-  useEffect(() => {
-    setIsChanged(true)
-    const timer = setTimeout(() => setIsChanged(false), 500)
-    return () => clearTimeout(timer)
-  }, [income])
+  const isChanged = useChangedEffect(income)
 
   return (
     <div className={styles.box}>
