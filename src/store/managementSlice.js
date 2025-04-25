@@ -29,7 +29,7 @@ export const managementSlice = createSlice({
   reducers: {
     addList: (state, action) => {
       const { title, price, type } = action.payload
-      let id = state.list.length + 1
+      const id = Date.now()
       const NumPrice = Number(price)
       const newList = {
         id,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import styles from './EditForm.module.css'
 import { useDispatch } from 'react-redux'
 import { editList } from '../store/managementSlice'
@@ -8,6 +8,8 @@ const EditForm = ({ id, onClose }) => {
   const [price, setPrice] = useState('')
   const [type, setType] = useState('income')
   const dispatch = useDispatch()
+  const inputref = useRef()
+  const priceref = useRef()
   const EditList = () => {
     if (title.trim() === '') {
       alert('내용을 입력하세요')
@@ -40,6 +42,8 @@ const EditForm = ({ id, onClose }) => {
         setPrice={setPrice}
         type={type}
         setType={setType}
+        inputref={inputref}
+        priceref={priceref}
       />
       <button onClick={EditList}>거래 수정</button>
     </div>
