@@ -1,0 +1,36 @@
+.box {
+  width: 300px;
+  padding: var(--fs26) var(--fs64);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--fs20);
+}
+
+.green {
+  color: var(--income-colors);
+}
+.red {
+  color: var(--expence-colors);
+}
+
+@media (max-width: 1100px) {
+  .box {
+    width: calc(94% - 4rem);
+  }
+}
+
+.changed {
+  animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
