@@ -23,13 +23,13 @@ body {
 main {
   max-width: 1280px;
   margin: 0 auto;
-  width: calc(100% -4rem);
+  width: calc(100% - 4rem);
 }
 
 .app {
   max-width: 1280px;
   margin: 0 auto;
-  width: calc(100% -4rem);
+  width: calc(100% - 4rem);
 }
 
 li {

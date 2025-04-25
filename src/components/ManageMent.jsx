@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './ManageMent.module.css'
 import { useDispatch } from 'react-redux'
 import { deleteList } from '../store/managementSlice'

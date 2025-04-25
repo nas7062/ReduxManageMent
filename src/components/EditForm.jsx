@@ -9,6 +9,21 @@ const EditForm = ({ id, onClose }) => {
   const [type, setType] = useState('income')
   const dispatch = useDispatch()
   const EditList = () => {
+    if (title.trim() === '') {
+      alert('내용을 입력하세요')
+      inputref.current?.focus()
+      return
+    }
+    if (isNaN(Number(price)) || price.trim() === '') {
+      alert('숫자를 입력하세요')
+      priceref.current?.focus()
+      return
+    }
+    if (Number(price) < 0) {
+      alert('0 이상의 숫자를 입력하세요')
+      priceref.current?.focus()
+      return
+    }
     dispatch(editList({ id, title, price, type }))
     setTitle('')
     setPrice('')
